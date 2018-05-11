@@ -9,14 +9,8 @@ package laboratorio3_leonardomontoya;
  *
  * @author Inspiron
  */
-public class Laboratorio3_LeonardoMontoya {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        
-    }
-    
+public class berzerk extends PersonajeAliado {
+    public berzerk() {
+        super(190,80,80,20,15,"ah","berzerk",110,110,"negro","negro","elfo",30);
+    }  
 }
