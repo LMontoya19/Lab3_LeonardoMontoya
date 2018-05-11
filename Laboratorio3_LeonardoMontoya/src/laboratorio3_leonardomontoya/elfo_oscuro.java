@@ -14,7 +14,7 @@ import java.util.*;
 public class elfo_oscuro extends penemigo {
 
     Random r = new Random();
-
+    private arma arma2;
     public elfo_oscuro() {
         super();
         super.setHp(60 + r.nextInt(120));
@@ -26,6 +26,7 @@ public class elfo_oscuro extends penemigo {
         super.setNombre("Elfo Oscuro");
         super.setEstatura(80);
         super.setPeso(80);
+        this.arma2 = new arma(1,"holi","raro");
     }
 
 }

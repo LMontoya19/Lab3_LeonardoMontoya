@@ -9,6 +9,10 @@ package laboratorio3_leonardomontoya;
  *
  * @author Inspiron
  */
-public class talismanes {
+public class talismanes extends objetos {
+
+    public talismanes(int bonificacion, String nombre, String rarity) {
+        super(bonificacion, nombre, rarity);
+    }
     
 }

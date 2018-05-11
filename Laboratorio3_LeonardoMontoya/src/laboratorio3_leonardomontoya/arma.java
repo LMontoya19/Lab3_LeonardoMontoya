@@ -11,4 +11,8 @@ package laboratorio3_leonardomontoya;
  */
 public class arma extends objetos {
     
+    public arma(int bonificacion, String nombre, String rarity) {
+        super(bonificacion, nombre, rarity);
+    }
+    
 }

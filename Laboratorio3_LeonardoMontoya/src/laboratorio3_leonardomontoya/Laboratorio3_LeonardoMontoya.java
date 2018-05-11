@@ -18,6 +18,30 @@ public class Laboratorio3_LeonardoMontoya {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        int enemigoscant = 5;
+        int pasos = 50;
+        armadura r = new armadura(5, "r", "usual");
+        talismanes gg = new talismanes(10, "gg", "insual");
+        arma stormbreaker = new arma(5, "Stormbreaker", "raro");
+        maldicion m2 = new maldicion(2, "m2", "inusual");
+        talismanes t = new talismanes(1, "t", "usual");
+        arma p2 = new arma(4, "p2", "inusual");
+        maldicion lab3 = new maldicion(7, "lab3", "raro");
+        armadura knight = new armadura(1, "knight", "inusual");
+        talismanes elixir = new talismanes(2, "elixir", "raro");
+        arma gun = new arma(3, "gun", "usual");
+        ArrayList<objetos> objetos = new ArrayList();
+        objetos.add(r);
+        objetos.add(gg);
+        objetos.add(stormbreaker);
+        objetos.add(m2);
+        objetos.add(p2);
+        objetos.add(t);
+        objetos.add(lab3);
+        objetos.add(knight);
+        objetos.add(elixir);
+        objetos.add(gun);
+        ArrayList<objetos> mochila = new ArrayList();
         Scanner entrada = new Scanner(System.in);
         Scanner entrada2 = new Scanner(System.in);
         char resp = 's';
@@ -76,7 +100,18 @@ public class Laboratorio3_LeonardoMontoya {
                                 break;
                         }
                     }
-                    
+
+                    break;
+                case 2:
+                    System.out.println("Ingrese 1)dificultad facil 2)dificultad media 3)dificultad dificil");
+                    int dificultad = entrada.nextInt();
+                    if (dificultad == 2) {
+                        enemigoscant = 10;
+                        pasos = 100;
+                    } else if (dificultad == 3) {
+                        enemigoscant = 15;
+                        pasos = 120;
+                    }
                     break;
                 case 3:
                     System.out.println("Gracias por jugar");

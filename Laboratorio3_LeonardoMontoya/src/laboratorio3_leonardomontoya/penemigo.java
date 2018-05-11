@@ -20,7 +20,8 @@ public class penemigo {
     private String nombre;
     private int estatura;
     private int peso;
-    
+    private arma arma;
+
     public penemigo(int hp, int ad, int eficacia, int critico, int velocidad, int edad, String nombre, int estatura, int peso) {
         this.hp = hp;
         this.ad = ad;
@@ -31,6 +32,7 @@ public class penemigo {
         this.nombre = nombre;
         this.estatura = estatura;
         this.peso = peso;
+        this.arma = new arma(5, "fu", "usual");
     }
 
     public penemigo() {

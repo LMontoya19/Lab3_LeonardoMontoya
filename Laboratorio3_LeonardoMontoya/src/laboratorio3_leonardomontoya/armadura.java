@@ -9,6 +9,11 @@ package laboratorio3_leonardomontoya;
  *
  * @author Inspiron
  */
-public class armadura {
+import java.util.*;
+public class armadura extends objetos {
+
+    public armadura(int bonificacion, String nombre, String rarity) {
+        super(bonificacion, nombre, rarity);
+    }
     
 }
