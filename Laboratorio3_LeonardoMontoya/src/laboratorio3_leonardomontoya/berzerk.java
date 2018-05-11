@@ -12,5 +12,11 @@ package laboratorio3_leonardomontoya;
 public class berzerk extends PersonajeAliado {
     public berzerk() {
         super(190,80,80,20,15,"ah","berzerk",110,110,"negro","negro","elfo",30);
-    }  
+    }
+
+    public berzerk(String nombre, int estatura, int peso, String colorpiel, String colorpelo, String raza) {
+        super(190,80,80,20,15,"ah", nombre, estatura, peso, colorpiel, colorpelo, raza,30);
+    }
+    
+    
 }

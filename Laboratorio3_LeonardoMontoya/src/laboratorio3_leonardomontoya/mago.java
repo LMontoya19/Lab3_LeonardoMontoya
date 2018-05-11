@@ -10,22 +10,18 @@ package laboratorio3_leonardomontoya;
  * @author Inspiron
  */
 public class mago extends PersonajeAliado {
+
     private int ap;
 
     public mago() {
-        super(120,20,70,10,20,"Hola","Nando",170,90,"blanco","negro","humano",2);
+        super(120, 20, 70, 10, 20, "Hola", "Nando", 170, 90, "blanco", "negro", "humano", 2);
         this.ap = 20;
     }
 
-    public mago(int ap) {
-        this.ap = ap;
+    public mago(String nombre, int estatura, int peso, String colorpiel, String colorpelo, String raza) {
+        super(120, 20, 70, 10, 20, "Hola", nombre, estatura, peso, colorpiel, colorpelo, raza, 2);
+        this.ap = 20;
     }
-
-    public mago(int ap, int hp, int ad, int eficacia, int velocidad, int suerte, String grito, String nombre, int estatura, int peso, String colorpiel, String colorpelo, String raza, int pcritico) {
-        super(120,20,70,10,20, grito, nombre, estatura, peso, colorpiel, colorpelo, raza, pcritico);
-        this.ap = ap;
-    }
-
 
     public int getAp() {
         return ap;
@@ -39,7 +35,5 @@ public class mago extends PersonajeAliado {
     public String toString() {
         return "mago{" + "ap=" + ap + '}';
     }
-    
-  
-    
+
 }

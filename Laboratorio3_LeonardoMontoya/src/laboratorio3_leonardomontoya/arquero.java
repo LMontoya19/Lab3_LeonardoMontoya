@@ -9,6 +9,14 @@ package laboratorio3_leonardomontoya;
  *
  * @author Inspiron
  */
-public class arquero {
-    
+public class arquero extends PersonajeAliado {
+
+    public arquero() {
+        super(150, 50, 85, 15, 20, "puu", "Lego", 110, 70, "blanco", "rubio", "elfo", 60);
+    }
+
+    public arquero(String nombre, int estatura, int peso, String colorpiel, String colorpelo, String raza) {
+        super(150, 50, 85, 15, 20, "PUU", nombre, estatura, peso, colorpiel, colorpelo, raza, 60);
+    }
+
 }
