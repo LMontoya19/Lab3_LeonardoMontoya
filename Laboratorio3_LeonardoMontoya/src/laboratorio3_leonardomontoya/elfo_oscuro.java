@@ -9,6 +9,23 @@ package laboratorio3_leonardomontoya;
  *
  * @author Inspiron
  */
-public class elfo_oscuro {
-    
+import java.util.*;
+
+public class elfo_oscuro extends penemigo {
+
+    Random r = new Random();
+
+    public elfo_oscuro() {
+        super();
+        super.setHp(60 + r.nextInt(120));
+        super.setAd(30 + r.nextInt(50));
+        super.setEficacia(50 + r.nextInt(70));
+        super.setCritico(0 + r.nextInt(100));
+        super.setVelocidad(20);
+        super.setEdad(500);
+        super.setNombre("Elfo Oscuro");
+        super.setEstatura(80);
+        super.setPeso(80);
+    }
+
 }

@@ -11,30 +11,14 @@ package laboratorio3_leonardomontoya;
  */
 public class objetos {
 
-    private int random;
-    private int tipo;
     private int bonificacion;
     private String nombre;
     private String rarity;
 
-    public objetos(int random) {
-        this.random = random;
-    }
-
-    public int getRandom() {
-        return random;
-    }
-
-    public void setRandom(int random) {
-        this.random = random;
-    }
-
-    public int getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(int tipo) {
-        this.tipo = tipo;
+    public objetos(int bonificacion, String nombre, String rarity) {
+        this.bonificacion = bonificacion;
+        this.nombre = nombre;
+        this.rarity = rarity;
     }
 
     public int getBonificacion() {
@@ -59,11 +43,6 @@ public class objetos {
 
     public void setRarity(String rarity) {
         this.rarity = rarity;
-    }
-
-    @Override
-    public String toString() {
-        return "objetos{" + "random=" + random + ", tipo=" + tipo + ", bonificacion=" + bonificacion + ", nombre=" + nombre + ", rarity=" + rarity + '}';
     }
 
 }
