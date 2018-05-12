@@ -45,4 +45,9 @@ public class objetos {
         this.rarity = rarity;
     }
 
+    @Override
+    public String toString() {
+        return "objetos{" + "bonificacion=" + bonificacion + ", nombre=" + nombre + ", rarity=" + rarity + '}';
+    }
+
 }

@@ -19,4 +19,9 @@ public class picaro extends PersonajeAliado {
         super(150, 55, 85, 30, 50, "ha", nombre, estatura, peso, colorpiel, colorpelo, raza, 30);
     }
 
+    @Override
+    public String toString() {
+        return "picaro{" + '}'+super.toString();
+    }
+
 }

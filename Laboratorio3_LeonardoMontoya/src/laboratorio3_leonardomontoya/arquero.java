@@ -19,4 +19,9 @@ public class arquero extends PersonajeAliado {
         super(150, 50, 85, 15, 20, "PUU", nombre, estatura, peso, colorpiel, colorpelo, raza, 60);
     }
 
+    @Override
+    public String toString() {
+        return "arquero{" + '}'+super.toString();
+    }
+
 }

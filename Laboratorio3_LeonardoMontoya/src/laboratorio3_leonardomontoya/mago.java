@@ -33,7 +33,9 @@ public class mago extends PersonajeAliado {
 
     @Override
     public String toString() {
-        return "mago{" + "ap=" + ap + '}';
+        return "mago{" + "ap=" + ap + '}'+super.toString();
     }
+
+   
 
 }

@@ -17,6 +17,11 @@ public class berzerk extends PersonajeAliado {
     public berzerk(String nombre, int estatura, int peso, String colorpiel, String colorpelo, String raza) {
         super(190,80,80,20,15,"ah", nombre, estatura, peso, colorpiel, colorpelo, raza,30);
     }
+
+    @Override
+    public String toString() {
+        return "berzerk{" + '}'+super.toString();
+    }
     
     
 }

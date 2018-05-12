@@ -18,9 +18,10 @@ public class Laboratorio3_LeonardoMontoya {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Random r = new Random();
         int enemigoscant = 5;
         int pasos = 50;
-        armadura r = new armadura(5, "r", "usual");
+        armadura rr = new armadura(5, "r", "usual");
         talismanes gg = new talismanes(10, "gg", "insual");
         arma stormbreaker = new arma(5, "Stormbreaker", "raro");
         maldicion m2 = new maldicion(2, "m2", "inusual");
@@ -31,7 +32,7 @@ public class Laboratorio3_LeonardoMontoya {
         talismanes elixir = new talismanes(2, "elixir", "raro");
         arma gun = new arma(3, "gun", "usual");
         ArrayList<objetos> objetos = new ArrayList();
-        objetos.add(r);
+        objetos.add(rr);
         objetos.add(gg);
         objetos.add(stormbreaker);
         objetos.add(m2);
@@ -45,6 +46,7 @@ public class Laboratorio3_LeonardoMontoya {
         Scanner entrada = new Scanner(System.in);
         Scanner entrada2 = new Scanner(System.in);
         char resp = 's';
+        PersonajeAliado user = new mago();
         while (resp == 's') {
             System.out.println("1)Iniciar");
             System.out.println("2)Dificultad");
@@ -56,7 +58,6 @@ public class Laboratorio3_LeonardoMontoya {
                     int opperson = entrada.nextInt();
                     System.out.println("Ingrese 1 si quere un personaje predeterminado 2 si quiere personalizarlo");
                     int pred = entrada.nextInt();
-                    PersonajeAliado user;
                     if (pred == 1) {
                         switch (opperson) {
                             case 1:
@@ -100,7 +101,108 @@ public class Laboratorio3_LeonardoMontoya {
                                 break;
                         }
                     }
+                    System.out.println("Inicio");
+                    while (user.getHp() > 0 && pasos > 0) {
+                        int avanzar = 1 + r.nextInt(20);
+                        System.out.println("Va a avanzar" + avanzar + "pasos");
+                        pasos -= avanzar;
+                        if (pasos < 1) {
+                            System.out.println("Ganaste");
+                            break;
+                        }
+                        int luck = 1 + r.nextInt(100);
+                        if (luck < user.getSuerte()) {
+                            mochila.add(objetos.get(0));
+                            if (objetos.get(0) instanceof armadura) {
+                                System.out.println("Encontro un armadura" + objetos.get(0));
+                                user.setHp(user.getHp() + ((armadura) objetos.get(0)).getBonificacion());
+                            } else if (objetos.get(0) instanceof arma) {
+                                System.out.println("Encontro un arma" + objetos.get(0));
+                                user.setAd(user.getAd() + ((arma) objetos.get(0)).getBonificacion());
+                            } else if (objetos.get(0) instanceof talismanes) {
+                                System.out.println("Encontro un talisman" + objetos.get(0));
+                                user.setSuerte(user.getSuerte() + ((talismanes) objetos.get(0)).getBonificacion());
+                            } else if (objetos.get(0) instanceof maldicion) {
+                                System.out.println("Encontro un maldicion" + objetos.get(0));
+                                user.setHp(user.getHp() - ((maldicion) objetos.get(0)).getBonificacion());
+                            }
+                            Collections.shuffle(objetos);
+                        } else {
+                            if (enemigoscant > 0) {
+                                int renemigo = 1 + r.nextInt(4);
+                                penemigo enemy = new bruja();
+                                if (renemigo == 2) {
+                                    enemy = new troll();
+                                }
+                                if (renemigo == 3) {
+                                    enemy = new orco();
+                                }
+                                if (renemigo == 4) {
+                                    enemy = new elfo_oscuro();
+                                }
+                                while (user.getHp() > 0 && enemy.getHp() > 0) {
+                                    System.out.println("Jugador" + user + "objetos" + mochila);
+                                    System.out.println("Enemigo" + enemy);
+                                    if (user.getVelocidad() > enemy.getVelocidad()) {
+                                        int reficaz = 1 + r.nextInt(100);
+                                        int rcritico = 1 + r.nextInt(100);
+                                        if (reficaz < user.getEficacia()) {
+                                            if (rcritico < user.getPcritico()) {
+                                                enemy.setHp(enemy.getHp() - (2 * user.getAd()));
+                                            } else {
+                                                enemy.setHp(enemy.getHp() - user.getAd());
+                                            }
+                                        }
+                                        if (enemy.getHp() < 1) {
+                                            break;
+                                        }
+                                        reficaz = 1 + r.nextInt(100);
+                                        rcritico = 1 + r.nextInt(100);
+                                        if (reficaz < enemy.getEficacia()) {
+                                            if (rcritico < enemy.getCritico()) {
+                                                user.setHp(user.getHp() - (2 * enemy.getAd()));
+                                            } else {
+                                                user.setHp(user.getHp() - enemy.getAd());
+                                            }
+                                        }
+                                        if (user.getHp() < 1) {
+                                            break;
+                                        }
+                                    } else {
+                                        int reficaz = 1 + r.nextInt(100);
+                                        int rcritico = 1 + r.nextInt(100);
+                                        if (reficaz < enemy.getEficacia()) {
+                                            if (rcritico < enemy.getCritico()) {
+                                                user.setHp(user.getHp() - (2 * enemy.getAd()));
+                                            } else {
+                                                user.setHp(user.getHp() - enemy.getAd());
+                                            }
+                                        }
+                                        if (user.getHp() < 1) {
+                                            break;
+                                        }
+                                        reficaz = 1 + r.nextInt(100);
+                                        rcritico = 1 + r.nextInt(100);
+                                        if (reficaz < user.getEficacia()) {
+                                            if (rcritico < user.getPcritico()) {
+                                                enemy.setHp(enemy.getHp() - (2 * user.getAd()));
+                                            } else {
+                                                enemy.setHp(enemy.getHp() - user.getAd());
+                                            }
+                                        }
+                                        if (enemy.getHp() < 1) {
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
 
+                        }
+
+                    }
+                    if (user.getHp() < 0) {
+                        System.out.println(" Usuario Perdio");
+                    }
                     break;
                 case 2:
                     System.out.println("Ingrese 1)dificultad facil 2)dificultad media 3)dificultad dificil");
@@ -115,7 +217,7 @@ public class Laboratorio3_LeonardoMontoya {
                     break;
                 case 3:
                     System.out.println("Gracias por jugar");
-                    resp = 's';
+                    resp = 'n';
                     break;
                 default:
                     System.out.println("Opcion no valida");
